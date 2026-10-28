@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import {
   BookOpen,
   Compass,
@@ -53,7 +53,7 @@ function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="gold-relative gold-ambient overflow-hidden">
+      <section className="gold-ambient relative overflow-hidden">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-20 pt-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:pb-28 lg:pt-24">
           <div>
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
