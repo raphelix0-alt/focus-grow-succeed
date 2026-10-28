@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          additional_info: string | null
+          author_name: string | null
+          book_genre: string | null
+          book_link: string | null
+          book_title: string | null
+          created_at: string
+          email: string
+          full_name: string
+          help_topic: string | null
+          id: string
+        }
+        Insert: {
+          additional_info?: string | null
+          author_name?: string | null
+          book_genre?: string | null
+          book_link?: string | null
+          book_title?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          help_topic?: string | null
+          id?: string
+        }
+        Update: {
+          additional_info?: string | null
+          author_name?: string | null
+          book_genre?: string | null
+          book_link?: string | null
+          book_title?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          help_topic?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
