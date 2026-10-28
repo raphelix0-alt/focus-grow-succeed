@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { CheckCircle2, Mail, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";

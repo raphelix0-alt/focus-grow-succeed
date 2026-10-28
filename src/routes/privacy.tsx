@@ -1,3 +1,4 @@
+import { createFileRoute } from '@tanstack/react-router'
 import { Section, SectionHeading } from "@/components/site/section";
 import { CONTACT_EMAIL } from "@/lib/content";
 
