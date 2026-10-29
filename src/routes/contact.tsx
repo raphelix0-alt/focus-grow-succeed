@@ -52,7 +52,9 @@ function ContactPage() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  const [fieldErrors, setFieldErrors] = useState<
+    Partial<Record<keyof typeof initialForm, string>>
+  >({});
 
   const set = (key: keyof typeof initialForm) => (
     event: React.ChangeEvent<
@@ -61,7 +63,7 @@ function ContactPage() {
   ) => setForm((f) => ({ ...f, [key]: event.target.value }));
 
   function validate(): boolean {
-    const errors: Record<string, string> = {};
+    const errors: Partial<Record<keyof typeof initialForm, string>> = {};
     if (!form.fullName.trim()) errors.fullName = "Please enter your full name.";
     if (!form.email.trim()) {
       errors.email = "Please enter your email address.";
@@ -164,7 +166,7 @@ function ContactPage() {
                 id="fullName"
                 label="Full Name"
                 required
-                error={fieldErrors.fullName}
+                error={fieldErrors["fullName"]}
               >
                 <input
                   id="fullName"
@@ -181,7 +183,7 @@ function ContactPage() {
                 id="email"
                 label="Email Address"
                 required
-                error={fieldErrors.email}
+                error={fieldErrors["email"]}
               >
                 <input
                   id="email"
@@ -231,7 +233,7 @@ function ContactPage() {
               <Field
                 id="bookLink"
                 label="Goodreads or Amazon Book Link"
-                error={fieldErrors.bookLink}
+                error={fieldErrors["bookLink"]}
               >
                 <input
                   id="bookLink"
@@ -265,7 +267,7 @@ function ContactPage() {
               <Field
                 id="additionalInfo"
                 label="Additional Information"
-                error={fieldErrors.additionalInfo}
+                error={fieldErrors["additionalInfo"]}
               >
                 <textarea
                   id="additionalInfo"
@@ -345,8 +347,8 @@ function Field({
 }: {
   id: string;
   label: string;
-  required?: boolean;
-  error?: string;
+  required?: boolean | undefined;
+  error?: string | undefined;
   children: React.ReactNode;
 }) {
   return (

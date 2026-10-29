@@ -46,7 +46,7 @@ function isRateLimited(ip: string): boolean {
 
 function clientIp(request: Request): string {
   const forwarded = request.headers.get("x-forwarded-for");
-  return forwarded ? forwarded.split(",")[0].trim() : "unknown";
+  return forwarded ? (forwarded.split(",")[0]?.trim() ?? "unknown") : "unknown";
 }
 
 export const Route = createFileRoute("/api/public/leads")({
