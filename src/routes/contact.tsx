@@ -166,7 +166,7 @@ function ContactPage() {
                 id="fullName"
                 label="Full Name"
                 required
-                error={fieldErrors.fullName}
+                error={fieldErrors["fullName"]}
               >
                 <input
                   id="fullName"
@@ -183,7 +183,7 @@ function ContactPage() {
                 id="email"
                 label="Email Address"
                 required
-                error={fieldErrors.email}
+                error={fieldErrors["email"]}
               >
                 <input
                   id="email"
@@ -233,7 +233,7 @@ function ContactPage() {
               <Field
                 id="bookLink"
                 label="Goodreads or Amazon Book Link"
-                error={fieldErrors.bookLink}
+                error={fieldErrors["bookLink"]}
               >
                 <input
                   id="bookLink"
@@ -267,7 +267,7 @@ function ContactPage() {
               <Field
                 id="additionalInfo"
                 label="Additional Information"
-                error={fieldErrors.additionalInfo}
+                error={fieldErrors["additionalInfo"]}
               >
                 <textarea
                   id="additionalInfo"
