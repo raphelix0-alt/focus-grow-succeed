@@ -22,7 +22,7 @@ import {
   VALUE_CARDS,
 } from "@/lib/content";
 
-const valueIcons = [SearchCheck, BookOpen, Compass];
+const valueIcons: Array<React.ElementType> = [SearchCheck, BookOpen, Compass];
 
 export const Route = createFileRoute("/")({
   head: () => ({
