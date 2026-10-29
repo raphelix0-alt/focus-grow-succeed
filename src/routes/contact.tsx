@@ -350,7 +350,6 @@ function Field({
   required?: boolean | undefined;
   error?: string | undefined;
   children: React.ReactNode;
-  children: React.ReactNode;
 }) {
   return (
     <div>
