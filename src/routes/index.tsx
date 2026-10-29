@@ -109,7 +109,7 @@ function Index() {
         />
         <div className="grid gap-6 sm:grid-cols-3">
           {VALUE_CARDS.map((card, i) => {
-            const Icon = valueIcons[i];
+            const Icon: React.ElementType = valueIcons[i] ?? SearchCheck;
             return (
               <div
                 key={card.title}

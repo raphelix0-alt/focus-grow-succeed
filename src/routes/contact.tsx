@@ -61,7 +61,7 @@ function ContactPage() {
   ) => setForm((f) => ({ ...f, [key]: event.target.value }));
 
   function validate(): boolean {
-    const errors: Record<string, string> = {};
+    const errors: Partial<Record<keyof typeof initialForm, string>> = {};
     if (!form.fullName.trim()) errors.fullName = "Please enter your full name.";
     if (!form.email.trim()) {
       errors.email = "Please enter your email address.";
