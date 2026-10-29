@@ -52,7 +52,9 @@ function ContactPage() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  const [fieldErrors, setFieldErrors] = useState<
+    Partial<Record<keyof typeof initialForm, string>>
+  >({});
 
   const set = (key: keyof typeof initialForm) => (
     event: React.ChangeEvent<
@@ -345,8 +347,9 @@ function Field({
 }: {
   id: string;
   label: string;
-  required?: boolean;
-  error?: string;
+  required?: boolean | undefined;
+  error?: string | undefined;
+  children: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (
